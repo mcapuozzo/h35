@@ -1,0 +1,116 @@
+# Huge kudos to all contributors to https://github.com/github/gitignore which is where 
+# this file came from.
+
+syntax: glob
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.o.d
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+lib/sqlapixx/osx/source/sqlite3
+lib/sqlapixx/osx/source/sqlite3.dSYM/Contents/Resources/DWARF/sqlite3
+
+# Borland Files
+*.~bpr
+*.~cpp
+*.~dpp
+*.~dfm
+*.~h
+*.~hpp
+*.tds
+*.log
+*.obj
+*.tlb
+*.tmp
+*.twfd
+*.twopts
+twmake.*
+*.dcu
+*.dsk
+*.~dsk
+*.~ddp
+*.~tlb
+
+#Ignore files built by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+*.sdf
+*.opensdf
+*.ipch
+*.db
+*.opendb
+
+#Sqlite3 Files stored by Visual Studio
+*.ide-shm
+*.ide-wal
+*.ide
+
+# Mac directory stuff
+*.DS_Store
+
+build/*
+build32/*
+cmake-build-debug/*
+.idea
+*.kate-swp
+TAGS
+tags
+*~
+# Emacs temp files:
+\#*
+\.\#*
+
+#Sublime Projects 
+*.sublime*
+
+#icu4c
+icu4c/*
+
+*.vim
