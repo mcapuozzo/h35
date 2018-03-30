@@ -1,0 +1,411 @@
+<?xml version = "1.0"?>
+<xs:schema xmlns:xs="Not yet defined"
+targetNamespace="Not yet defined"
+xmlns="Not yet defined"
+elementFormDefault="Not yet defined">
+
+<xs:element name = "CFG">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name = "CFGLine1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name = "Station_Name" type = "xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength = "1"/>
+                  <xs:maxLength = "64"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name = "Device_ID" type = "xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "1"/>
+                  <xs:maxLength = "64"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name= "Revision_Year" type = "xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1991"/>
+                  <xs:enumeration value="1999"/>
+                  <xs:enumeration value="2013"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name = "CFGLine2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Total_Channels" type = "xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="1"/>
+                  <xs:MaxInclusive value="999999"/>
+                </xs:restriction>
+              </xs.simpleType>
+            </xs:element>
+            <xs:element name="Analog_Channels" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "2"/>
+                  <xs:maxLength = "7"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Dialog_Channels" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "2"/>
+                  <xs:maxLength = "7"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Analog_Channels">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="An" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="1"/>
+                  <xs:maxInclusive value="999999"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="CH_ID" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "1"/>
+                  <xs:maxLength = "128"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PH" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String>
+                  <xs:minLength = "0"/>
+                  <xs:maxLength = "2"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="CCBM" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String>
+                  <xs:minLength = "0"/>
+                  <xs:maxLength = "64"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="UU" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "1"/>
+                  <xs:maxLength = "32"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="A" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="B" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Skew" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Min" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,13}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Max" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,13}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Primary" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Secondary" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="P_or_S" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:enumerated value="P"/>
+                  <xs:enumerated value="S"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Digital_Channels">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Dn" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="1"/>
+                  <xs:maxInclusive value="999999"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="D_CH_ID" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String"/>
+                  <xs:minLength = "1"/>
+                  <xs:maxLength = "128"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="D_Ph" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String"/>
+                  <xs:minLength = "0"/>
+                  <xs:maxlength = "2"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="D_ccbm" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String"/>
+                  <xs:minLength = "0"/>
+                  <xs:maxLength = "64"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Y" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value = "0"/>
+                  <xs:maxInclusive value = "1"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Line_Frequency">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LF" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Sampling_Rate_Info">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nrates" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="0"
+                  <xs:maxInclusive value="999"
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Samp" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="endSamp" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="1"/>
+                  <xs:maxInclusive value="9999999999"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Date_and_Time">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dd" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="1"/>
+                  <xs:maxInclusive value="31"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="mm" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="1"/>
+                  <xs:maxInclusive value="12"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="yyyy" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="1900"/>
+                  <xs:maxInclusive value="9999"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="hh" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="0"/>
+                  <xs:maxInclusive value="23"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="mm" type="xs:integer">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:minInclusive value="0"/>
+                  <xs:maxInclusive value="59"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="ss.ssssss" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:minInclusive value="00.000000"/>
+                  <xs:maxInclusive value="59.999999"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DAT_File_Type">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FT" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "5"/>
+                  <xs:maxLength = "8"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Time_Stamp_MF">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="timemult" type="xs:decimal">
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:pattern value="\d{1,32}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Time_Information_and_Relationship">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="time_code" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "1"/>
+                  <xs:maxLength = "6"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="local_code" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:minLength = "1"/>
+                  <xs:maxLength = "6"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Time_Quality_of_Samps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="tmq_code" type="xs:String">
+              <xs:simpleType>
+                <xs:restriction base="xs:String">
+                  <xs:maxLength = "1"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+ 
+              
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    
