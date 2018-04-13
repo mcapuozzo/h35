@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="comtrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="xs:string" />
+        <xs:element name="station" type="xs:string" />
+        <xs:element name="device-id" type="xs:string" />
+        <xs:element name="channel-counts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="analog">
+                <xs:simpleType>
+                  <xs:restriction base="xs:unsignedInt">
+                    <xs:minInclusive value="0" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="digital">
+                <xs:simpleType>
+                  <xs:restriction base="xs:unsignedInt">
+                    <xs:minInclusive value="0" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="analog-channels">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="channel" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="phase">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="2" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="circuit-component" type="xs:string" />
+                    <xs:element name="unit" type="unit" />
+                    <xs:element name="multiplier" type="xs:double" /><!--Float too?-->
+                    <xs:element name="offset" type="xs:double" />
+                    <xs:element name="skew" type="xs:double" />
+                    <xs:element name="min-val" type="xs:double" />
+                    <xs:element name="max-val" type="xs:double" />
+                    <xs:element name="transformer-pri" type="xs:double" />
+                    <xs:element name="transformer-sec" type="xs:double" />
+                    <xs:element name="pri-or-sec">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="p" />
+                          <xs:enumeration value="s" />
+                          <xs:enumeration value="P" />
+                          <xs:enumeration value="S" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="index" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:unsignedInt">
+                        <xs:minInclusive value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="digital-channels">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="channel" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="phase">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="2" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="circuit-component" type="xs:string" />
+                    <xs:element name="normal-position"><!--Why isn't trinary/quaternary allowed?-->
+                      <xs:simpleType>
+                        <xs:restriction base="xs:unsignedInt">
+                          <xs:minInclusive value="0" />
+                          <xs:maxInclusive value="1" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="index" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:unsignedInt">
+                        <xs:minInclusive value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="nominal-frequency">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="50" /><!--More options?-->
+              <xs:enumeration value="60" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="rates">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rate" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="hertz" type="xs:double" />
+                    <xs:element name="end-sample">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:unsignedInt">
+                          <xs:minInclusive value="1" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="index" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:unsignedInt">
+                        <xs:minInclusive value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="number" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:unsignedInt">
+                  <xs:minInclusive value="1" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="first-timestamp" type="xs:dateTime" /><!--This timestamp format is not compatible with previous COMTRADE. Let's move to 8601.-->
+        <xs:element name="trigger-timestamp" type="xs:dateTime" />
+        <xs:element name="timestamp-multiplier" type="xs:double" />
+        <xs:element name="time-code" type="xs:string" /><!--Are these codes necessary if we use 8601???-->
+        <xs:element name="local-code" type="xs:string" /><!--Needs to be given a regex.-->
+        <xs:element name="time-quality-code">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="0" />
+              <xs:enumeration value="1" />
+              <xs:enumeration value="2" />
+              <xs:enumeration value="3" />
+              <xs:enumeration value="4" />
+              <xs:enumeration value="5" />
+              <xs:enumeration value="6" />
+              <xs:enumeration value="7" />
+              <xs:enumeration value="8" />
+              <xs:enumeration value="9" />
+              <xs:enumeration value="A" />
+              <xs:enumeration value="B" />
+              <xs:enumeration value="C" />
+              <xs:enumeration value="D" />
+              <xs:enumeration value="E" />
+              <xs:enumeration value="F" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="leap-second">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="0" />
+              <xs:enumeration value="1" />
+              <xs:enumeration value="2" />
+              <xs:enumeration value="3" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="information" type="xs:string" />
+        <xs:element name="data">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sample" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="timestamp" type="xs:dateTime" />
+                    <xs:element name="analog-values" type="xs:base64Binary" />
+                    <xs:element name="digital-values" type="xs:base64Binary" />
+                  </xs:sequence>
+                  <xs:attribute name="number" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:unsignedInt">
+                        <xs:minInclusive value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="type" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="binary16" />
+                  <xs:enumeration value="binary32" />
+                  <xs:enumeration value="binary64" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="revision" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1991" />
+            <xs:enumeration value="1997" />
+            <xs:enumeration value="1999" />
+            <xs:enumeration value="2013" />
+            <xs:enumeration value="2018" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="data-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bitset" />
+      <xs:enumeration value="bool" />
+      <xs:enumeration value="date" />
+      <xs:enumeration value="enum" />
+      <xs:enumeration value="float16" />
+      <xs:enumeration value="float32" />
+      <xs:enumeration value="float64" />
+      <xs:enumeration value="int16" />
+      <xs:enumeration value="int32" />
+      <xs:enumeration value="int64" />
+      <xs:enumeration value="string" />
+      <xs:enumeration value="variant" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="unit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="" />
+      <xs:enumeration value="amperes" />
+      <xs:enumeration value="baud" />
+      <xs:enumeration value="bytes" />
+      <xs:enumeration value="cycles" />
+      <xs:enumeration value="days" />
+      <xs:enumeration value="degrees" />
+      <xs:enumeration value="degrees_celsius" />
+      <xs:enumeration value="degrees_fahrenheit" />
+      <xs:enumeration value="farads" />
+      <xs:enumeration value="farads_per_kilometer" />
+      <xs:enumeration value="henrys" />
+      <xs:enumeration value="hertz" />
+      <xs:enumeration value="hertz_per_second" />
+      <xs:enumeration value="hours" />
+      <xs:enumeration value="joules" />
+      <xs:enumeration value="ohms" />
+      <xs:enumeration value="ohms_per_second" />
+      <xs:enumeration value="ohms_per_kilometer" />
+      <xs:enumeration value="meters" />
+      <xs:enumeration value="miles" />
+      <xs:enumeration value="minutes" />
+      <xs:enumeration value="months" />
+      <xs:enumeration value="newton_meters" />
+      <xs:enumeration value="radians" />
+      <xs:enumeration value="seconds" />
+      <xs:enumeration value="siemens" />
+      <xs:enumeration value="va_hours" />
+      <xs:enumeration value="var_hours" />
+      <xs:enumeration value="vars" />
+      <xs:enumeration value="vector_group_numeral" />
+      <xs:enumeration value="volts" />
+      <xs:enumeration value="volts_per_hertz" />
+      <xs:enumeration value="volt_amperes" />
+      <xs:enumeration value="watts" />
+      <xs:enumeration value="watt_hours" />
+      <xs:enumeration value="weeks" />
+      <xs:enumeration value="unknown" />
+      <xs:enumeration value="years" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -114,3 +114,4 @@ tags
 icu4c/*
 
 *.vim
+c#-validator/.vs/xsd-validator/v15/Server/sqlite3/db.lock

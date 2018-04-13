@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comtrade revision="2018">
+  <header>Optional header text here.</header>
+  <xcfg>
+    <station></station>
+    <device-id></device-id>
+    <channel-counts>
+      <!--Wondering why this is necessary in an XML world? We can just index through them.-->
+      <analog>1</analog>
+      <digital>0</digital>
+    </channel-counts>
+    <analog-channels>
+      <channel index="1">
+        <id/>
+        <phase/>
+        <circuit-component/>
+        <unit>amperes</unit>
+        <multiplier>1</multiplier>
+        <offset>0</offset>
+        <skew>0</skew>
+        <min-val>0</min-val>
+        <max-val>5</max-val>
+        <transformer-pri>1000</transformer-pri>
+        <transformer-sec>5</transformer-sec>
+        <pri-or-sec>p</pri-or-sec>
+      </channel>
+    </analog-channels>
+    <digital-channels>
+      <channel index="1">
+        <id/>
+        <phase>A</phase>
+        <circuit-component/>
+        <normal-position>0</normal-position>
+      </channel>
+    </digital-channels>
+    <nominal-frequency>50</nominal-frequency>
+    <rates number="1">
+      <!--Number of rates necessary?-->
+      <rate index="1">
+        <hertz>2</hertz>
+        <end-sample>2</end-sample>
+      </rate>
+    </rates>
+    <first-timestamp>2002-05-30T09:30:10+</first-timestamp>
+    <trigger-timestamp>2002-05-30T09:30:10+06:00</trigger-timestamp>
+    <timestamp-multiplier>2</timestamp-multiplier>
+    <time-code>0</time-code>
+    <local-code>0</local-code>
+    <time-quality-code>0</time-quality-code>
+    <leap-second>0</leap-second>
+  </xcfg>
+
+  <information>Optional information text here.</information>
+  <data type="binary16">
+    <sample number="1">
+      <timestamp>2002-05-30T09:30:10+06:00</timestamp>
+      <analog-values></analog-values>
+      <digital-values></digital-values>
+    </sample>
+  </data>
+</comtrade>
