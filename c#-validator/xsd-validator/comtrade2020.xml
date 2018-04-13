@@ -4,11 +4,6 @@
   <configuration>
     <station></station>
     <device-id></device-id>
-    <channel-counts>
-      <!--Wondering why this is necessary in an XML world? We can just index through them.-->
-      <analog>1</analog>
-      <digital>0</digital>
-    </channel-counts>
     <analog-channels>
       <channel index="1">
         <id/>
@@ -18,11 +13,11 @@
         <multiplier>1</multiplier>
         <offset>0</offset>
         <skew>0</skew>
-        <min-val>0</min-val>
-        <max-val>5</max-val>
-        <transformer-pri>1000</transformer-pri>
-        <transformer-sec>5</transformer-sec>
-        <pri-or-sec>p</pri-or-sec>
+        <min-value>0</min-value>
+        <max-value>5</max-value>
+        <transformer-primary>1000</transformer-primary>
+        <transformer-secondary>5</transformer-secondary>
+        <primary-or-secondary>p</primary-or-secondary>
       </channel>
     </analog-channels>
     <digital-channels>
@@ -34,8 +29,7 @@
       </channel>
     </digital-channels>
     <nominal-frequency>50</nominal-frequency>
-    <rates number="1">
-      <!--Number of rates necessary?-->
+    <rates>
       <rate index="1">
         <hertz>2</hertz>
         <end-sample>2</end-sample>
@@ -52,7 +46,6 @@
   <information>Optional information text here.</information>
   <data type="binary16">
     <sample number="1">
-      <timestamp>2002-05-30T09:30:10+06:00</timestamp>
       <analog-values></analog-values>
       <digital-values></digital-values>
     </sample>
