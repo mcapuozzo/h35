@@ -1,8 +1,8 @@
 <?xml version = "1.0"?>
-<xs:schema xmlns:xs="Not yet defined"
-targetNamespace="Not yet defined"
-xmlns="Not yet defined"
-elementFormDefault="Not yet defined">
+<xs:schema xmlns:xs=""
+targetNamespace=""
+xmlns=""
+elementFormDefault="">
 
 <xs:element name = "CFG">
   <xs:complexType>
@@ -13,16 +13,16 @@ elementFormDefault="Not yet defined">
             <xs:element name = "Station-Name" type = "xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:string">
-                  <xs:minLength = "1"/>
-                  <xs:maxLength = "64"/>
+                  <xs:minLength min-value = "1"/>
+                  <xs:maxLength max-value= "64"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
             <xs:element name = "Device-ID" type = "xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:String">
-                  <xs:minLength = "1"/>
-                  <xs:maxLength = "64"/>
+                  <xs:minLength min-value= "1"/>
+                  <xs:maxLength max-value= "64"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
@@ -52,16 +52,16 @@ elementFormDefault="Not yet defined">
             <xs:element name="Analog-Channels" type="xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:String">
-                  <xs:minLength = "2"/>
-                  <xs:maxLength = "7"/>
+                  <xs:minLength min-value = "2"/>
+                  <xs:maxLength max-value= "7"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
             <xs:element name="Dialog-Channels" type="xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:String">
-                  <xs:minLength = "2"/>
-                  <xs:maxLength = "7"/>
+                  <xs:minLength min-value = "2"/>
+                  <xs:maxLength max-value = "7"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
@@ -82,32 +82,32 @@ elementFormDefault="Not yet defined">
             <xs:element name="A-Channel-ID" type="xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:String">
-                  <xs:minLength = "1"/>
-                  <xs:maxLength = "128"/>
+                  <xs:minLength min-value= "1"/>
+                  <xs:maxLength max-value= "128"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
             <xs:element name="A-Ph" type="xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:String>
-                  <xs:minLength = "0"/>
-                  <xs:maxLength = "2"/>
+                  <xs:minLength min-value= "0"/>
+                  <xs:maxLength max-value= "2"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
             <xs:element name="A-CCBM" type="xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:String>
-                  <xs:minLength = "0"/>
-                  <xs:maxLength = "64"/>
+                  <xs:minLength min-value= "0"/>
+                  <xs:maxLength max-value= "64"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
             <xs:element name="UU" type="xs:String">
               <xs:simpleType>
                 <xs:restriction base="xs:String">
-                  <xs:minLength = "1"/>
-                  <xs:maxLength = "32"/>
+                  <xs:minLength min-value= "1"/>
+                  <xs:maxLength max-value= "32"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
