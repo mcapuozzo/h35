@@ -1,61 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
 <comtrade revision="2018">
   <header>Optional header text here.</header>
-  <xcfg>
-    <station></station>
-    <device-id></device-id>
+  <XCFG>
+    <file-information>
+      <station>COMTRADE-Example</station>
+      <device-id>Example-File</device-id>
+      <revision-year>1999</revision-year>
+    </file-information>
     <channel-counts>
       <!--Wondering why this is necessary in an XML world? We can just index through them.-->
-      <analog>1</analog>
-      <digital>0</digital>
+      <total-channels>12</total-channels>
+      <analog>8</analog>
+      <digital>4</digital>
     </channel-counts>
     <analog-channels>
       <channel index="1">
-        <id/>
-        <phase/>
+        <id>Voltage</id>
+        <phase>A</phase>
         <circuit-component/>
-        <unit>amperes</unit>
-        <multiplier>1</multiplier>
-        <offset>0</offset>
-        <skew>0</skew>
-        <min-val>0</min-val>
-        <max-val>5</max-val>
-        <transformer-pri>1000</transformer-pri>
-        <transformer-sec>5</transformer-sec>
-        <pri-or-sec>p</pri-or-sec>
+        <unit>KV</unit>
+        <multiplier>1.185038e-002</multiplier>
+        <offset>1.270309e+002</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.250000e+000</transformer-pri>
+        <transformer-sec>1.100000e-001</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
+      </channel>
+      <channel index="2">
+        <id>Voltage</id>
+        <phase>B</phase>
+        <circuit-component/>
+        <unit>KV</unit>
+        <multiplier>1.136446e-002</multiplier>
+        <offset>-1.033804e+002</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.250000e+000</transformer-pri>
+        <transformer-sec>1.100000e-001</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
+      </channel>
+      <channel index="3">
+        <id>Voltage</id>
+        <phase>C</phase>
+        <circuit-component/>
+        <unit>KV</unit>
+        <multiplier>1.089996e-002</multiplier>
+        <offset>6.494373e+001</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.250000e+000</transformer-pri>
+        <transformer-sec>1.100000e-001</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
+      </channel>
+      <channel index="4">
+        <id>Neutral</id>
+        <phase>N</phase>
+        <circuit-component/>
+        <unit>KV</unit>
+        <multiplier>1.000568e-004</multiplier>
+        <offset>5.994712e+000</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.250000e+000</transformer-pri>
+        <transformer-sec>1.100000e-001</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
+      </channel>
+      <channel index="5">
+        <id>Current</id>
+        <phase>A</phase>
+        <circuit-component/>
+        <unit>KA</unit>
+        <multiplier>3.347261e-004</multiplier>
+        <offset>-8.504647e+000</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.500000e+002</transformer-pri>
+        <transformer-sec>1.000000e+000</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
+      </channel>
+      <channel index="6">
+        <id>Current</id>
+        <phase>B</phase>
+        <circuit-component/>
+        <unit>KA</unit>
+        <multiplier>1.729430e-002</multiplier>
+        <offset>-3.167013e+002</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.500000e+002</transformer-pri>
+        <transformer-sec>1.000000e+000</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
+      </channel>
+      <channel index="7">
+        <id>Current</id>
+        <phase>C</phase>
+        <circuit-component/>
+        <unit>KA</unit>
+        <multiplier>1.725417e-002</multiplier>
+        <offset>3.027162e+002</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.500000e+002</transformer-pri>
+        <transformer-sec>1.000000e+000</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
+      </channel>
+      <channel index="8">
+        <id>Neutral</id>
+        <phase>N</phase>
+        <circuit-component/>
+        <unit>KA</unit>
+        <multiplier>1.001257e-005</multiplier>
+        <offset>-1.998038e+000</offset>
+        <skew>0.000000e+000</skew>
+        <min-val>-99999</min-val>
+        <max-val>99998</max-val>
+        <transformer-pri>1.500000e+002</transformer-pri>
+        <transformer-sec>1.000000e+000</transformer-sec>
+        <pri-or-sec>P</pri-or-sec>
       </channel>
     </analog-channels>
     <digital-channels>
       <channel index="1">
-        <id/>
-        <phase>A</phase>
+        <id>Trip</id>
+        <phase></phase>
         <circuit-component/>
-        <normal-position>0</normal-position>
+        <normal-state>0</normal-state>
+      </channel>
+      <channel index="2">
+        <id>Start</id>
+        <phase></phase>
+        <circuit-component/>
+        <normal-state>0</normal-state>
+      </channel>
+      <channel index="3">
+        <id>B3</id>
+        <phase></phase>
+        <circuit-component/>
+        <normal-state>0</normal-state>
+      </channel>
+      <channel index="4">
+        <id>B4</id>
+        <phase></phase>
+        <circuit-component/>
+        <normal-state>0</normal-state>
       </channel>
     </digital-channels>
-    <nominal-frequency>50</nominal-frequency>
-    <rates number="1">
-      <!--Number of rates necessary?-->
+    <nominal-frequency>1</nominal-frequency>
+    <rates number="">
       <rate index="1">
-        <hertz>2</hertz>
-        <end-sample>2</end-sample>
+        <hertz>5000.000000</hertz>
+        <end-sample>6</end-sample>
       </rate>
     </rates>
-    <first-timestamp>2002-05-30T09:30:10+</first-timestamp>
-    <trigger-timestamp>2002-05-30T09:30:10+06:00</trigger-timestamp>
-    <timestamp-multiplier>2</timestamp-multiplier>
+    <first-timestamp>11/08/1999,21:46:42.000000</first-timestamp>
+    <trigger-timestamp>11/08/1999,21:46:42.000000</trigger-timestamp>
+    <timestamp-multiplier>1</timestamp-multiplier>
     <time-code>0</time-code>
     <local-code>0</local-code>
     <time-quality-code>0</time-quality-code>
     <leap-second>0</leap-second>
-  </xcfg>
-
-  <information>Optional information text here.</information>
-  <data type="binary16">
-    <sample number="1">
-      <timestamp>2002-05-30T09:30:10+06:00</timestamp>
-      <analog-values></analog-values>
-      <digital-values></digital-values>
-    </sample>
-  </data>
+  </XCFG>
+  <xDAT>
+    <data type="ASCII">
+      <sample number="1">
+        <timestamp>0000000000</timestamp>
+        <analog-values>-00025570,-00060944,00081471,-00059912,00013456,00018136,-00017715,-00000194</analog-values>
+        <digital-values>0,0,0,0</digital-values>
+      </sample>
+      <sample number="2">
+        <timestamp>0000000200</timestamp>
+        <analog-values>-00020339,-00063848,00078718,-00049916,00013456,00018136,-00017715,-00000194</analog-values>
+        <digital-values>0,0,0,0</digital-values>
+      </sample>
+      <sample number="3">
+        <timestamp>0000000400</timestamp>
+        <analog-values>-00014936,-00066312,00075325,-00049916,00013456,00018196,-00017715,-00000194</analog-values>
+        <digital-values>0,0,0,0</digital-values>
+      </sample>
+      <sample number="4">
+        <timestamp>0000000600</timestamp>
+        <analog-values>-00009536,-00068775,00071839,-00039924,00013456,00018136,-00017715,-00000194</analog-values>
+        <digital-values>0,0,0,0</digital-values>
+      </sample>
+      <sample number="5">
+        <timestamp>0000000800</timestamp>
+        <analog-values>-00003967,-00070974,00068169,-00039924,00013456,00018196,-00017715,-00000194</analog-values>
+        <digital-values>0,0,0,0</digital-values>
+      </sample>
+      <sample number="6">
+        <timestamp>0000001000</timestamp>
+        <analog-values>00001430,-00073174,00064499,-00039924,00013456,00018136,-00017657,-00000194</analog-values>
+       <digital-values>0,0,0,0</digital-values>
+     </sample>
+    </data>
+  </xDAT>
 </comtrade>
